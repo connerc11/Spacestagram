@@ -1,5 +1,5 @@
  import { useState, useEffect } from 'react';
- import './App.css'
+ import './css/App.css'
 import axios from 'axios'
 import Space from "./Space"
 
@@ -12,12 +12,12 @@ import Space from "./Space"
 
  function App() {
     const APIKey = "6AIGbj4jHFCcD7ChEiWMreQx3wbVgxowEsvyWVjz"
-    const startDate = "2021-12-12"
+    // const startDate = "2021-12-12"
     const apiNumber="10"
-    const keyUrl = "https://api.nasa.gov/planetary/apod?api_key=${APIKey}&count=${apiNumber}"
+    // const keyUrl = "https://api.nasa.gov/planetary/apod?api_key=${APIKey}&count=${apiNumber}"
      
     
-    const [pictures, usePictures] = useState([]);
+    const [pictures, setPictures] = useState([]);
      const [updating, nowUpdating] = useState(false);
 
     useEffect(() => {
@@ -34,7 +34,7 @@ const fetchAPI = () => {
     nowUpdating(true);
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${APIKey}&count=${apiNumber}`)
     .then((res) => {
-        usePictures(res.data);
+        setPictures(res.data);
         nowUpdating(false);
     })
     .catch((err) => {
@@ -50,6 +50,20 @@ return (
                 
             </div>
         </div>
+    {updating ? (
+        <h2 className='textloading text-center'>Loading...</h2>
+      ) : (
+        <div className='row'>
+            {pictures.map((picture, key) => {
+            return (
+             <div key={key} className='card col-lg-4 col-md-6'>
+             <Space picture={picture} />
+              </div>
+            );
+          })}
+        </div>
+      )}
+
     </div>
 )
 
