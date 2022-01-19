@@ -57,8 +57,8 @@
 
 
 
-const APIKey = "6AIGbj4jHFCcD7ChEiWMreQx3wbVgxowEsvyWVjz"
-export const getAsteroidPicture = () => {
-    return fetch (`https://api.nasa.gov/neo/rest/v1/feed?api_key=${APIKey}`)
-    .then(response => response.json())
-}
+// const APIKey = "6AIGbj4jHFCcD7ChEiWMreQx3wbVgxowEsvyWVjz"
+// export const getAsteroidPicture = () => {
+//     return fetch (`https://api.nasa.gov/neo/rest/v1/feed?api_key=${APIKey}`)
+//     .then(response => response.json())
+//}
