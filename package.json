@@ -1,6 +1,6 @@
 {
   "homepage": "http://connerc11.github.io/spacestagram/",
-  "name": "photo-port",
+  "name": "spacestagram",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
