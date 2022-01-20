@@ -1,3 +1,4 @@
+/* Setting for all content */
 *{
   margin: 0;
   padding: 0;
@@ -5,13 +6,14 @@
   display: flexbox;
 }
 
+/* Adjust the title */
 .title {
   font-size: 25px;
   font-weight: bold;
-  color: royalblue;
+  color: blue;
 }
 
-
+/* Fic the title's background */
 .heading{
   background-color:lightcyan;
   fill:#fff;
@@ -20,6 +22,8 @@
   background-image:url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' fill-opacity='1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' style='enable-background:new 0 0 500 500'%3E%3Cstyle%3E .st0{fill:rgba(255,255,255,1)} %3C/style%3E%3Ccircle class='st0' cx='87.5' cy='46.5' r='8.5'/%3E%3Ccircle class='st0' cx='94.5' cy='124.5' r='15.5'/%3E%3Ccircle class='st0' cx='244.5' cy='91.5' r='21.5'/%3E%3Ccircle class='st0' cx='348.5' cy='80.5' r='7.5'/%3E%3Ccircle class='st0' cx='155' cy='356' r='10'/%3E%3Ccircle class='st0' cx='422' cy='139' r='14'/%3E%3Ccircle class='st0' cx='123' cy='251' r='6'/%3E%3Ccircle class='st0' cx='280' cy='204' r='11'/%3E%3Ccircle class='st0' cx='315' cy='311' r='11'/%3E%3Ccircle class='st0' cx='262' cy='411' r='6'/%3E%3Ccircle class='st0' cx='455.5' cy='395.5' r='12.5'/%3E%3Ccircle class='st0' cx='432' cy='500' r='25'/%3E%3Ccircle class='st0' cx='432' r='25'/%3E%3Ccircle class='st0' cx='-3.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='496.5' cy='240.5' r='10.5'/%3E%3Ccircle class='st0' cx='96' cy='437' r='3'/%3E%3C/svg%3E");
   
 }
+
+
 h2 {
   
   margin-top: 2px;
@@ -35,12 +39,29 @@ h2 {
   
 }
 
+h3 {
+  margin-top: 3px;
+  margin: 20px;
+  margin-bottom: 10px;
+  font-family: fantasy;
+  color: blue;
+  text-align: center;
+}
+
+/* Adjsuting the description for each section*/
 .wording {
   margin: 10px;
   width: auto;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: royalblue;
 }
 
+.wording:hover {
+  font-size: large;
+  
+}
+
+/* Setting image to fit the full page */
 .img {
   max-width: 100%;
   height: auto;
@@ -74,12 +95,22 @@ background-image:url("data:image/svg+xml;charset=utf8,%3Csvg id='Layer_1' fill-o
   margin: auto;
 }
 
+/* Styling button */
 .btn {
-  border-color: black;
-  background-color: black;
+  height: 50px;
+  padding: 0 30px;
+  border-radius: 10px;
+  border-color: red;
   color: red;
+  background-color: transparent;
 }
 
+.buttons {
+  display: flex;
+justify-content: space-around;
+margin-top: 10px;
+margin-bottom: 10px;
+}
 
 
 .App {

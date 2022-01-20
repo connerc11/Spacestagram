@@ -12,9 +12,9 @@ import Space from "./Space"
 
  function App() {
     const APIKey = "6AIGbj4jHFCcD7ChEiWMreQx3wbVgxowEsvyWVjz"
-    // const startDate = "2021-12-12"
-    const apiNumber="10"
-    // const keyUrl = "https://api.nasa.gov/planetary/apod?api_key=${APIKey}&count=${apiNumber}"
+  //choose a certain number of pictures to display  
+    const apiNumber="20"
+  
      
     
     const [pictures, setPictures] = useState([]);
@@ -29,7 +29,7 @@ import Space from "./Space"
     }, []);
     
 
-
+//fetching the api call to select images
 const fetchAPI = () => {
     nowUpdating(true);
     axios.get(`https://api.nasa.gov/planetary/apod?api_key=${APIKey}&count=${apiNumber}`)
@@ -42,9 +42,13 @@ const fetchAPI = () => {
     })
 }
 
+//displays the information loading to page
 return (
     <div className='heading'>
-       <h2>Spacestagram</h2>
+       <h2 >Spacestagram</h2>
+       <h3> Here lies all the amazing content that you want to see :)</h3>
+       <h3> Try clicking the like and happy buttons to test the system :D</h3>
+       
                 
      
     {updating ? (
@@ -66,4 +70,5 @@ return (
 
 
  }
+
 export default App;

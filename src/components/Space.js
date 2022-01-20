@@ -7,23 +7,30 @@ const Space = ({ picture }) => {
     const explanation = picture.explanation
     const date = picture.date
     const url = picture.url
+    const mediaType = picture.media_type
 
-
+//create useState hooks in order to use font awesome icons to generate like buttons
     const [heart, setHeart] = useState(false);
+    const [smile, setSmile] = useState(true)
 
-    const makeliked = () => {
+    //for the smiley fave
+    const makeSmile = () => {
+        setSmile(!smile)
+    }
+
+    //for the heart button
+    const makeLiked = () => {
         setHeart(!heart);
     };
+    
 
-    // const setLiked = () => {
-    //     this.useState({liked: this.state.liked})
-    // }
-
+ 
+//create cards and give classnames
     return (
         <Card style={{ width: '90rem' }}>
   <Card.Body className='App text-center'>
       <br></br>
-    <Card.Title className="title"> {title}</Card.Title>
+    <Card.Title className="title"><i className="fas fa-globe-americas"></i><br></br> {title}<br></br> <i class="fas fa-globe-americas"></i></Card.Title>
     <br></br>
     <Card.Subtitle className="mb-2 text-muted"> Date Taken ~ {date}</Card.Subtitle>
     <br></br>
@@ -31,20 +38,25 @@ const Space = ({ picture }) => {
       {explanation}
     </Card.Text>
     <br></br>
-    <Card.Img className="img" alt="NASA PHOTO" variant="top" src={url} />
-    {/* <Card.Img className="img" alt="NASA PHOTO" variant="top" iframe={url}/> */}
+    {mediaType === "video" && <Card.Img className="img" alt="NASA PHOTO" variant="top" src={url} />}
+    {mediaType === "image" && <Card.Img className="img" alt="NASA PHOTO" variant="top" src={url} />}
     <br></br>
-    <div>
-    <Button className="btn" onClick={makeliked}> 
-    LOVE THIS
-    {heart ? <i className="fas fa-heart"></i> : <i className="far fa-heart"></i>}
+    <div className="buttons">
+    <Button className="btn" onClick={makeLiked}>
+    {heart ? <i className="fas fa-heart"></i> : <i className=" far fa-heart"></i>}
+    </Button>
+    <br></br>
+    <Button className='btn' onClick={makeSmile}>
+        {smile ? <i className="far fa-smile"></i> : <i className="fas fa-frown"></i>}
     </Button>
     </div>
   </Card.Body>
 </Card> 
+    
     )
 
 }
+
 
 
 
