@@ -16,10 +16,11 @@ import Space from "./Space"
     const apiNumber="20"
   
      
-    
+    //set up useState functions to show the process for contect loading
     const [pictures, setPictures] = useState([]);
      const [updating, nowUpdating] = useState(false);
 
+    //use the useEffect to establish connectivity after the system has rendered
     useEffect(() => {
         try {
             fetchAPI();
